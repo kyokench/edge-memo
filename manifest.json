@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ふたつのメモ",
+  "version": "1.1.4",
+  "description": "すぐ書ける一時メモと、整理して残せる通常メモ。",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "ふたつのメモ",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "16": "icons/icon-16.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "16": "icons/icon-16.png",
+    "128": "icons/icon-128.png"
+  }
+}

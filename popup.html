@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ふたつのメモ</title><link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png"><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header><img class="brand" src="icons/icon-48.png" alt="" width="42" height="42"><div><h1>ふたつのメモ</h1><p>思いつきを、すぐそばに。</p></div><button id="openLarge" class="open-large">大きな画面で開く ↗</button></header>
+<nav role="tablist" aria-label="メモの種類"><button id="tempTab" role="tab" aria-selected="true" aria-controls="tempPanel">一時メモ</button><button id="notesTab" role="tab" aria-selected="false" aria-controls="notesPanel">通常メモ <span id="count">0</span></button></nav>
+<main>
+<section id="tempPanel" role="tabpanel" aria-labelledby="tempTab">
+
+<label class="sr-only" for="scratch">一時メモの内容</label><textarea id="scratch" placeholder="思いついたこと、あとで調べたいこと…"></textarea>
+<div class="row"><small id="chars">0文字</small><button id="clearTemp" class="subtle">一時メモを消去</button></div>
+<button id="keepTemp" class="primary full">通常メモとして保存</button>
+</section>
+<section id="notesPanel" role="tabpanel" aria-labelledby="notesTab" hidden>
+<div class="section-heading"><h2>残しておきたいメモ</h2><button id="newNote" class="primary">＋ 新規メモ</button></div>
+<label class="sr-only" for="search">メモを検索</label><input id="search" type="search" placeholder="タイトル・本文を検索">
+<div id="list"></div>
+<article id="viewer" hidden>
+<div class="actions"><button id="backToList" type="button">← 一覧に戻る</button><button id="editViewed" type="button" class="primary">編集</button></div>
+<h2 id="viewTitle"></h2><small id="viewDate"></small><div id="viewBody"></div>
+</article>
+<form id="editor" hidden>
+<h2 id="editorHeading">新規メモ</h2>
+<label for="title">タイトル</label><input id="title" maxlength="200" placeholder="無題のメモ">
+<label for="body">本文</label><textarea id="body" placeholder="メモを書いてください"></textarea>
+<div class="actions"><button id="cancel" type="button">キャンセル</button><button type="submit" class="primary">保存する</button></div>
+</form>
+</section>
+</main>
+<footer><button id="export">JSON保存</button><button id="exportHtml">HTML保存</button><button id="import">インポート</button><input id="file" type="file" accept=".json,application/json" hidden></footer>
+<p id="status" role="status" aria-live="polite"></p>
+<script src="backup.js"></script><script src="popup.js"></script>
+</body></html>
+
+
+
+
