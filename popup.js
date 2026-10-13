@@ -149,7 +149,6 @@ init().then(() => document.querySelectorAll("button,input,textarea").forEach(el 
 
 $("openLarge").onclick = () => action(async () => {
   await chrome.tabs.create({ url: chrome.runtime.getURL("workspace.html") });
-  window.close();
 });
 $("exportHtml").onclick = () => action(async () => {
   if (!$("editor").hidden && !confirm("編集中の内容は含まれません。保存済みのメモをHTMLに出力しますか？")) return;
